@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #343a40; /* Dark gray text color */
+}
+
+header {
+  background-color: #343a40; /* Dark header */
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  color: #28a745; /* Green color for headings */
+}
+
+nav .nav-link {
+  margin-left: 20px;
+  position: relative; /* Position for the pseudo-element */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+nav .nav-link::after {
+  content: '';
+  display: block;
+  height: 2px; /* Highlight bar height */
+  background: #28a745; /* Highlight color */
+  position: absolute; /* Position relative to the link */
+  left: 0;
+  bottom: -5px; /* Positioning the highlight below the text */
+  width: 100%; /* Full width */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.3s ease; /* Smooth transition for the highlight */
+}
+
+nav .nav-link:hover {
+  color: #155724; /* Darker green on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+nav .nav-link:hover::after {
+  transform: scaleX(1); /* Show the highlight on hover */
+}
+
+a {
+  color: #28a745; /* Green links */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+  color: #155724; /* Darker green on hover */
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #343a40; /* Dark footer */
+  padding: 20px 0;
+}
+
+section {
+  padding: 40px 0; /* More padding for sections */
+  background-color: white; /* White background for sections */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px; /* Space between sections */
+}
+
+img {
+  border: 5px solid #28a745; /* Green border for profile image */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+.social-icon {
+  width: 30px; /* Adjust the size as needed */
+  margin-left: 10px; /* Space between icons */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  header, footer {
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .nav {
+    justify-content: center; /* Center nav items */
+  }
+
+  .col-md-4, .col-md-5, .col-md-3 {
+    margin-bottom: 20px; /* Space between columns on small screens */
+  }
+}
